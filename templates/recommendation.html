@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="/static/images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>TastyNavigator</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+
+    <!--jqury-->
+    <!-- Add this line to include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- font awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+
+
+
+  <!--custom table css-->
+
+
+
+      <style>
+
+        table,th,td{
+
+            border:2px solid #868b8e;
+            border-collapse: collapse;
+        }
+        table{
+
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+        #menu1{
+            margin:70px 70px 70px 70px;
+
+        }
+        #addbtn
+        {
+            margin: 20px;
+
+        }
+
+    </style>
+  <!--end of custom css-->
+
+
+
+    <script>
+    console.log('working');
+
+
+    if(localStorage.getItem('cart')== null)
+    {
+        var cart = {}
+    }
+    else
+    {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+
+
+$('.cart').click(function()
+    {
+        console.log('clicked');
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+<!-- header section strats -->
+    <header class="header_section long_section px-0">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="/">
+          <span>
+            TastyNavigator
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/filter">Filter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="quote_btn-container">
+            {% if user.is_authenticated %}
+
+
+
+
+            <a href="/view_cart">
+
+              <span>
+              <img src="/static/images/cart.png" style="width:35px">
+              </span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+
+             {{user.first_name}}
+              &nbsp;
+            <a href="/logout" methods="POST">
+              <span>
+                Signout
+              </span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+              </form>
+
+
+
+            {% else %}
+            <a href="/login">
+              <span>
+                Login
+              </span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+
+            {% endif %}
+
+            <form class="form-inline">
+              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+    <!-- end header section -->
+
+  </div>
+
+
+
+    <!--for loop and table logic-->
+
+
+<!--<table>-->
+
+    <!--{% for menu in menus %}-->
+    <!--<tr>-->
+        <!--<th></th>-->
+    <!--<td>{{menu.id}}</td>-->
+    <!--<td>{{menu.dish_name}}</td>-->
+        <!--<td>{{menu.ingredients}}</td>-->
+        <!--<td>{{menu.calories}}|</td>-->
+
+        <!--<td>&nbsp;{{menu.price}}&nbsp;|</td>-->
+
+        <!--<td>{{menu.user_rating}}&nbsp;|</td>-->
+
+        <!--<td>{{menu.description}}&nbsp;</td>-->
+
+        <!--<td>{{menu.category}}&nbsp;</td>-->
+        <!--<td>{{menu.cuisine}}&nbsp;</td>-->
+    <!--</tr>-->
+
+    <!--{% endfor %}-->
+<!--</table>-->
+
+
+
+
+   <div id="menu1">
+    <table>
+       <tr>
+        <th>SR.NO</th>
+           <th> DISH ID</th>
+        <th id="dish">DISH NAME</th>
+           <th>DESCRIPTION</th>
+        <th id="descr">INGRIDIENTS</th>
+           <th>PRICE</th>
+        <th id="ingre">CALORIES</th>
+            <th>CUISINE</th>
+
+        <th>USER RATING</th>
+
+        <th>CATEGORY</th>
+
+               <th>ADD</th>
+
+       </tr>
+
+       {% for menu in menu_list %}
+
+
+
+
+    <tr>
+        <td>{{ forloop.counter }}</td>
+    <td>{{menu.id}}</td>
+    <td>{{menu.dish_name}}</td>
+        <td>{{menu.description}}</td>
+        <td>{{menu.ingredients}}</td>
+
+        <td>&nbsp;{{menu.price}}$&nbsp;</td>
+        <td>{{menu.calories}}&nbsp;</td>
+
+
+        <td>{{menu.cuisine}}&nbsp;</td>
+
+        <td>{{menu.user_rating}}&nbsp;</td>
+         <td>{{menu.category}}&nbsp;</td>
+
+      <td>
+            <button class="cart" onclick="addToCart({{ menu.id }})">Add to cart</button>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+
+
+
+    </table>
+    </div>
+
+
+
+
+  <!--for loop and table logic end-->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+        Distribution <a href="https://themewagon.com">ThemeWagon</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+
+
+    <!--java script to retrived dish id-->
+
+
+  <script>
+    function addToCart(dishId) {
+        // Make an AJAX request to add the dish to the cart
+
+        console.log("item added ");
+        $.ajax({
+            type: 'GET',
+            url: `/add_to_cart/${dishId}/`,
+            success: function(response) {
+                if (response.success) {
+                    // Optionally, update the UI to indicate the item was added
+                    alert('Item added to cart!');
+                } else {
+                    alert('Failed to add item to cart.');
+                }
+            },
+            error: function() {
+                alert('Error adding item to cart.');
+            }
+        });
+    }
+    </script>
+
+
+
+
+    <!--END OF java script to retrive dish id -->
+
+
+
+
+</body>
+
+</html>

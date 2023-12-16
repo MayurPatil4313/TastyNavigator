@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="/static/images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>TastyNavigator</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- font awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+
+  <!--<style>-->
+    <!--td{-->
+    <!--border: 5px solid #008B8B  ;-->
+     <!--border-radius:10px;-->
+
+     <!--}-->
+  <!--</style>-->
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+<!-- header section strats -->
+    <header class="header_section long_section px-0">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="/">
+          <span>
+            TastyNavigator
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/filter">Filter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="quote_btn-container">
+            {% if user.is_authenticated %}
+
+
+
+
+            <a href="/view_cart">
+
+              <span>
+              <img src="/static/images/cart.png" style="width:35px">
+              </span>
+
+            </a>
+
+             {{user.first_name}}
+              &nbsp;
+            <a href="/logout" methods="POST">
+              <span>
+                Signout
+              </span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+              </form>
+
+
+
+            {% else %}
+            <a href="/login">
+              <span>
+                Login
+              </span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+
+            {% endif %}
+
+            <form class="form-inline">
+              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+    <!-- end header section -->
+
+  </div>
+
+  <!-- contact section -->
+  <section class="contact_section  long_section">
+    <div class="container">
+      <!--<div class="row">-->
+        <!--<div class="col-md-6">-->
+          <div class="form_container">
+            <div class="heading_container">
+              <h2>
+                recommendation criteria
+              </h2>
+            </div>
+
+            <table style="width:100%">
+              <tr>
+                <th style="=witdth:45%"> Recommendation Using Calories </th>
+                <th style="=witdth:10%;">  </th>
+                <th style="=witdth:45%"> Recommendation Using Ingredients</th>
+              </tr>
+              <tr>
+                <td style="border: 5px solid #008B8B  ;
+     border-radius:10px; ">
+
+
+            <form  method="POST" action="http://127.0.0.1:8000/filter/">
+
+              {% csrf_token %}
+
+
+              <div>
+                <input type="number" step="any" name="mincal" min="2" max="850" placeholder="Enter Minimum Calories"  required/>
+              </div>
+              <div>
+                <input type="number" step="any" name="maxcal" min="2" max="850"  placeholder="Enter Maximum Calories" required />
+              </div>
+                <div>
+                <input type="number" step="any" name="minprice" min="2" max="850" placeholder="Enter Minimum Price"required />
+              </div>
+              <div>
+                <input type="number" step="any" name="maxprice" min="2" max="850" placeholder="Enter Maximum Price" required/>
+              </div>
+
+
+
+                <div>
+                <input type="number" step="any" name="userrating" min="1" max="4.9" placeholder="Enter Minimum User Rating" />
+              </div>
+
+              <div class="btn_box">
+                <button type="submit">
+                      SUBMIT
+                </button>
+              </div>
+            </form>
+
+               </td>
+              <td></td>
+                <td style="border: 5px solid #008B8B  ;
+     border-radius:10px; ">
+
+
+
+
+            <form  method="POST" action="http://127.0.0.1:8000/Ingredients/">
+
+              {% csrf_token %}
+
+
+              <div>
+                <input type="text"  name="ingredients"  placeholder="Enter Comma Seprated Ingredients"  required/>
+              </div>
+              <div>
+
+
+
+
+
+
+              <div class="btn_box">
+                <button type="submit">
+                      SUBMIT
+                </button>
+              </div>
+            </form>
+
+
+
+
+              </td>
+              </tr>
+              </table>
+              </table>
+          </div>
+        <!--</div>-->
+        <!--<div class="col-md-6">-->
+          <!--<div class="map_container">-->
+            <!--<div class="map">-->
+              <!--<div id="googleMap"></div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    </div>
+  </section>
+  <!-- end contact section -->
+
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+        Distribution <a href="https://themewagon.com">ThemeWagon</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>

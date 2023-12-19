@@ -435,14 +435,24 @@ def view_cart(request):
 from django.shortcuts import render
 from .models import CartItem
 
+from home_app.models import Order
+
 def order(request):
     # Get the user's cart items
     cart_items = CartItem.objects.filter(user=request.user)
+
+
+
 
     description = CartItem.description
     # Calculate the total price
     #total_price = sum(cart_item.price for cart_item in cart_items)
     total_price = sum(cart_item.total_price() for cart_item in cart_items)
+
+
+
+
+
 
     # Pass the total_price to the template
     context = {
@@ -451,6 +461,9 @@ def order(request):
         'description' : description,
 
     }
+
+
+
 
     return render(request, 'order.html', context)
 

@@ -7,7 +7,11 @@ from django.contrib.auth import authenticate ,login, alogin , logout
 from recommendation import models
 
 from home_app import views
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -67,8 +71,38 @@ def Registration(request):
         myuser.first_name = name
         myuser.last_name = name
         myuser.save()
+
+        # Send welcome email
+        subject = 'Welcome to TastyNavigator'
+        message = "Hello {},\n\nThank you for registering with TastyNavigator!\n\nYour username: {}\nYour password: {}\n\nWe hope you enjoy your experience with Tasty Navigator.".format(
+            name, email, password)
+        from_email = settings.DEFAULT_FROM_EMAIL
+        recipient_list = [email]
+        send_mail(subject, message, from_email, recipient_list)
+
+        # messages.success(request, "User is saved, and a welcome email has been sent.")
+
+
+
+
+
+
         messages.success(request, "user is save")
         return render(request,'login.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return render(request, 'Registration.html')
 
@@ -91,7 +125,20 @@ def handlesignin(request):
         auth.login(request,user)
         print("in login funciton 646544444444444444444444444444444444444444444444444444444444444444444444")
 
-        messages.success(request,"User is Login Sussessfully")
+        # # Send welcome email
+        # subject = 'Welcome to TastyNavigator'
+        # message = "Hello {},\n\nThank you for registering with TastyNavigator!\n\nYour username: {}\nYour password: {}\n\nWe hope you enjoy your experience with Tasty Navigator.".format(
+        #     username,username, password)
+        # from_email = settings.DEFAULT_FROM_EMAIL
+        # recipient_list = [username]
+        # send_mail(subject, message, from_email, recipient_list)
+        #
+        # messages.success(request,"User is Login Sussessfully")
+
+
+
+
+
         return redirect('/') # is may get error
     else:
         messages.error(request," Invalid cradintanl ")
@@ -312,6 +359,7 @@ def pasta(request):
 from django.shortcuts import render
 from django.http import HttpResponse
 from home_app.models import Order
+from recommendation.models import CartItem
 
 
 
@@ -324,14 +372,27 @@ def handle_order(request):
         card_holder_name = request.POST.get('card_holder_name')
         amount = request.POST.get('amount')
 
+        cart_items = CartItem.objects.filter(user=request.user)
 
-        order = Order(card_number=card_number, expiration_date=expiration_date, cvv_code=cvv_code, card_holder_name=card_holder_name,amount=amount)
+        # Create an Order instance for each cart item and save it to the database
+        for cart_item in cart_items:
+            Order.objects.create(
+                user=request.user,
+                card_number=card_number,
+                expiration_date=expiration_date,
+                cvv_code=cvv_code,
+                card_holder_name=card_holder_name,
+                dish_name=cart_item.dish_name,
+                description=cart_item.description,
+                price=cart_item.price,
+                quantity=cart_item.quantity,
+                amount=cart_item.total_price()
+            )
 
-        order.save()
+        # Clear the user's cart items after creating the orders
+        cart_items.delete()
 
-        # registration = Registration_Data(name=name, email=email, password=password, mobile=mobile, address=address,
-        #                                  security=security, answer=answer)
-        # registration.save()
+
 
         return render(request,'ThankYou.html')  # You can customize the response as needed
 
@@ -342,7 +403,27 @@ def handle_order(request):
 
 
 
+def userorder(request):
 
+
+    user_id = request.user.id
+
+    # Fetch orders for the specific user
+    user_orders = Order.objects.filter(user_id=user_id)
+
+    total_amount = sum(order.price * order.quantity for order in user_orders)
+
+
+
+
+
+    context = {
+        'user_orders': user_orders,
+        'amount': total_amount,
+    }
+
+
+    return render(request,'userorder.html',context)
 
 
 

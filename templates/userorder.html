@@ -19,6 +19,11 @@
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
 
+    <!--jqury-->
+    <!-- Add this line to include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
 
@@ -29,13 +34,75 @@
   <!-- responsive style -->
   <link href="/static/css/responsive.css" rel="stylesheet" />
 
-  <!--<style>-->
-    <!--td{-->
-    <!--border: 5px solid #008B8B  ;-->
-     <!--border-radius:10px;-->
 
-     <!--}-->
-  <!--</style>-->
+
+  <!--custom table css-->
+
+
+
+      <style>
+
+        table,th,td{
+
+            border:2px solid #868b8e;
+            border-collapse: collapse;
+        }
+        table{
+
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+        #menu1{
+            margin:70px 70px 70px 70px;
+
+        }
+        #addbtn
+        {
+            margin: 20px;
+
+        }
+
+    </style>
+  <!--end of custom css-->
+
+
+
+    <script>
+    console.log('working');
+
+
+    if(localStorage.getItem('cart')== null)
+    {
+        var cart = {}
+    }
+    else
+    {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+
+
+$('.cart').click(function()
+    {
+        console.log('clicked');
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
 
@@ -68,9 +135,8 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/contact">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/userorder">Orders </a>
+              </li><li class="nav-item">
+                <a class="nav-link" href="/userorder">Orders</a>
               </li>
             </ul>
           </div>
@@ -85,7 +151,7 @@
               <span>
               <img src="/static/images/cart.png" style="width:35px">
               </span>
-
+              <i class="fa fa-user" aria-hidden="true"></i>
             </a>
 
              {{user.first_name}}
@@ -126,112 +192,64 @@
 
   </div>
 
-  <!-- contact section -->
-  <section class="contact_section  long_section">
-    <div class="container">
-      <!--<div class="row">-->
-        <!--<div class="col-md-6">-->
-          <div class="form_container">
-            <div class="heading_container">
-              <h2>
-                recommendation criteria
-              </h2>
-            </div>
-
-            <table style="width:100%">
-              <tr>
-                <th style="=witdth:45%"> Recommendation Using Calories </th>
-                <th style="=witdth:10%;">  </th>
-                <th style="=witdth:45%"> Recommendation Using Ingredients</th>
-              </tr>
-              <tr>
-                <td style="border: 5px solid #008B8B  ;
-     border-radius:10px; ">
 
 
-            <form  method="POST" action="http://127.0.0.1:8000/filter/">
+    <!--for loop and table logic-->
 
-              {% csrf_token %}
-
-
-              <div>
-                <input type="number" step="any" name="mincal" min="2" max="850" placeholder="Enter Minimum Calories"  required/>
-              </div>
-              <div>
-                <input type="number" step="any" name="maxcal" min="2" max="850"  placeholder="Enter Maximum Calories" required />
-              </div>
-                <div>
-                <input type="number" step="any" name="minprice" min="2" max="850" placeholder="Enter Minimum Price"required />
-              </div>
-              <div>
-                <input type="number" step="any" name="maxprice" min="2" max="850" placeholder="Enter Maximum Price" required/>
-              </div>
+<h1 style="text-align:center;margin-top:50px">{{user.first_name}} ORDERS</h1>
 
 
 
-                <div>
-                <input type="number" step="any" name="userrating" min="1" max="4.9" placeholder="Enter Minimum User Rating" />
-              </div>
+   <div id="menu1">
 
-              <div class="btn_box">
-                <button type="submit">
-                      SUBMIT
-                </button>
-              </div>
-            </form>
+       {% if user_orders %}
+    <table>
+       <tr>
+        <th>SR.NO</th>
 
-               </td>
-              <td></td>
-                <td style="border: 5px solid #008B8B  ;
-     border-radius:10px; ">
+        <th id="dish">DISH NAME</th>
+           <th>DESCRIPTION</th>
+           <th>QUANTITY</th>
+
+           <th>PRICE</th>
+           <th>DATE AND TIME</th>
+
+
+       </tr>
+
+       {% for order in user_orders %}
 
 
 
 
-            <form  method="POST" action="http://127.0.0.1:8000/Ingredients/">
-
-              {% csrf_token %}
-
-
-              <div>
-                <input type="text"  name="ingredients"  placeholder="Enter Comma Seprated Ingredients"  required/>
-              </div>
-              <div>
+    <tr>
+        <td>{{ forloop.counter }}</td>
+    <td>{{order.dish_name}}</td>
+        <td>{{order.description}}</td>
+        <td>{{order.quantity}}</td>
 
 
+        <td>&nbsp;{{order.price}}$&nbsp;</td>
+        <td>&nbsp;{{order.order_datetime}}&nbsp;</td>
 
 
 
+    </tr>
 
-              <div class="btn_box">
-                <button type="submit">
-                      SUBMIT
-                </button>
-              </div>
-            </form>
+    {% endfor %}
 
 
-
-
-              </td>
-              </tr>
-              </table>
-              </table>
-          </div>
-        <!--</div>-->
-        <!--<div class="col-md-6">-->
-          <!--<div class="map_container">-->
-            <!--<div class="map">-->
-              <!--<div id="googleMap"></div>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
+    </table>
+        <<h2 style="text-align:center;">Total Amount: ${{ amount }}</h2>
+       {% else %}
+        <h1 style="text-align:center; margin-top:50px">No orders found for this user.</h1>
+    {% endif %}
     </div>
-  </section>
-  <!-- end contact section -->
 
 
+
+
+  <!--for loop and table logic end-->
 
   <!-- footer section -->
   <footer class="footer_section">
@@ -255,6 +273,42 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
+
+
+
+    <!--java script to retrived dish id-->
+
+
+  <script>
+    function addToCart(dishId) {
+        // Make an AJAX request to add the dish to the cart
+
+        console.log("item added ");
+        $.ajax({
+            type: 'GET',
+            url: `/add_to_cart/${dishId}/`,
+            success: function(response) {
+                if (response.success) {
+                    // Optionally, update the UI to indicate the item was added
+                    alert('Item added to cart!');
+                } else {
+                    alert('Failed to add item to cart.');
+                }
+            },
+            error: function() {
+                alert('Error adding item to cart.');
+            }
+        });
+    }
+    </script>
+
+
+
+
+    <!--END OF java script to retrive dish id -->
+
+
+
 
 </body>
 

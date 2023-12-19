@@ -23,6 +23,7 @@ urlpatterns = [
     path("breakfast_categories",views.breakfast_categories, name='breakfast_categories'),
 
     path('handleOrder/', views.handle_order, name='handle_order'),
+    path('userorder/', views.userorder, name='userorder'),
 
 
 

@@ -9,7 +9,7 @@ certifi==2023.7.22
 charset-normalizer==3.3.1
 click==8.1.7
 colorama==0.4.6
-Django==5.0
+Django==4.1.7
 django-bootstrap==0.2.4
 django-bootstrap-v5==1.0.11
 django-crispy-forms==1.7.0
@@ -38,6 +38,7 @@ pandas==1.5.3
 Pillow==9.3.0
 protobuf==4.21.12
 pyarrow==13.0.0
+psycopg2==2.9.6
 pycryptodome==3.19.0
 pydantic==1.10.4
 pydeck==0.8.1b0

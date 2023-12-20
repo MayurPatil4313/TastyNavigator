@@ -2,37 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5143b66a-7f0e-4d6a-9626-b9ebee94b9ac" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0004_order_cart_item.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0005_remove_order_cart_item_order_description_and_more.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0006_remove_order_description_remove_order_dish_name_and_more.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0007_order_description_order_dish_name_order_price_and_more.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0008_alter_order_dish_name.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0009_alter_order_description_alter_order_price_and_more.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0010_alter_order_price.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0011_alter_order_description_alter_order_dish_name_and_more.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0012_order_user.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0013_remove_order_description_remove_order_dish_name_and_more.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0014_order_description_order_dish_name_order_price_and_more.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0015_remove_order_dish_details_alter_order_user.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0016_alter_registration_data_email.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0017_alter_registration_data_name.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/home_app/migrations/0018_order_order_datetime.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/userorder.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/empty_cart_template.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/TastyNavigator/settings.py" afterPath="$PROJECT_DIR$/TastyNavigator/settings.py" />
+      <change beforePath="$PROJECT_DIR$/TastyNavigator/urls.py" afterPath="$PROJECT_DIR$/TastyNavigator/urls.py" />
+      <change beforePath="$PROJECT_DIR$/TastyNavigator/wsgi.py" afterPath="$PROJECT_DIR$/TastyNavigator/wsgi.py" />
+      <change beforePath="$PROJECT_DIR$/build_files.sh" afterPath="" />
       <change beforePath="$PROJECT_DIR$/home_app/models.py" afterPath="$PROJECT_DIR$/home_app/models.py" />
       <change beforePath="$PROJECT_DIR$/home_app/urls.py" afterPath="$PROJECT_DIR$/home_app/urls.py" />
       <change beforePath="$PROJECT_DIR$/home_app/views.py" afterPath="$PROJECT_DIR$/home_app/views.py" />
+      <change beforePath="$PROJECT_DIR$/recommendation/models.py" afterPath="$PROJECT_DIR$/recommendation/models.py" />
       <change beforePath="$PROJECT_DIR$/recommendation/views.py" afterPath="$PROJECT_DIR$/recommendation/views.py" />
-      <change beforePath="$PROJECT_DIR$/templates/Registration.html" afterPath="$PROJECT_DIR$/templates/Registration.html" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" afterPath="$PROJECT_DIR$/templates/about.html" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/templates/cart_template.html" afterPath="$PROJECT_DIR$/templates/cart_template.html" />
-      <change beforePath="$PROJECT_DIR$/templates/categories.html" afterPath="$PROJECT_DIR$/templates/categories.html" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" afterPath="$PROJECT_DIR$/templates/contact.html" />
-      <change beforePath="$PROJECT_DIR$/templates/filter.html" afterPath="$PROJECT_DIR$/templates/filter.html" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change beforePath="$PROJECT_DIR$/templates/order.html" afterPath="$PROJECT_DIR$/templates/order.html" />
-      <change beforePath="$PROJECT_DIR$/templates/recommendation.html" afterPath="$PROJECT_DIR$/templates/recommendation.html" />
+      <change beforePath="$PROJECT_DIR$/templates/userorder.html" afterPath="$PROJECT_DIR$/templates/userorder.html" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,32 +27,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/home_app/views.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="421" column="31" lean-forward="false" selection-start-line="421" selection-start-column="31" selection-end-line="421" selection-end-column="31" />
+            <state relative-caret-position="155">
+              <caret line="66" column="99" lean-forward="false" selection-start-line="66" selection-start-column="99" selection-end-line="66" selection-end-column="99" />
               <folding>
-                <element signature="e#0#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recommendation.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/recommendation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2982">
-              <caret line="142" column="43" lean-forward="false" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
-              <folding>
-                <element signature="e#3712#3718#0" expanded="true" />
-                <element signature="e#5723#5729#0" expanded="true" />
-                <element signature="e#5744#5750#0" expanded="true" />
-                <element signature="e#5785#5791#0" expanded="true" />
-                <element signature="e#5827#5833#0" expanded="true" />
-                <element signature="e#5872#5878#0" expanded="true" />
-                <element signature="e#5914#5920#0" expanded="true" />
-                <element signature="e#6246#6252#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +42,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TastyNavigator/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+            <state relative-caret-position="512">
+              <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,11 +61,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>td</find>
-      <find>our fu</find>
-      <find>customCarousel</find>
-      <find>removeRow</find>
-      <find>value=&quot;</find>
       <find>end h</find>
       <find>paneer</find>
       <find>input</find>
@@ -126,6 +86,11 @@
       <find>contact us</find>
       <find>contex</find>
       <find>User O</find>
+      <find>overall</find>
+      <find>updatetotal</find>
+      <find>order</find>
+      <find>total</find>
+      <find>than</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,7 +115,6 @@
         <option value="$PROJECT_DIR$/templates/404.html" />
         <option value="$PROJECT_DIR$/recommendation/forms.py" />
         <option value="$PROJECT_DIR$/recommendation/urls.py" />
-        <option value="$PROJECT_DIR$/TastyNavigator/urls.py" />
         <option value="$PROJECT_DIR$/templates/birini.html" />
         <option value="$PROJECT_DIR$/templates/cake.html" />
         <option value="$PROJECT_DIR$/templates/virgin.html" />
@@ -160,21 +124,24 @@
         <option value="$PROJECT_DIR$/home_app/admin.py" />
         <option value="$PROJECT_DIR$/templates/ThankYou.html" />
         <option value="$PROJECT_DIR$/templates/order.html" />
-        <option value="$PROJECT_DIR$/templates/cart_template.html" />
-        <option value="$PROJECT_DIR$/recommendation/models.py" />
-        <option value="$PROJECT_DIR$/recommendation/views.py" />
         <option value="$PROJECT_DIR$/templates/Registration.html" />
-        <option value="$PROJECT_DIR$/home_app/urls.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/categories.html" />
         <option value="$PROJECT_DIR$/templates/contact.html" />
         <option value="$PROJECT_DIR$/templates/filter.html" />
-        <option value="$PROJECT_DIR$/home_app/models.py" />
         <option value="$PROJECT_DIR$/templates/recommendation.html" />
-        <option value="$PROJECT_DIR$/TastyNavigator/settings.py" />
+        <option value="$PROJECT_DIR$/TastyNavigator/wsgi.py" />
+        <option value="$PROJECT_DIR$/templates/empty_cart_template.html" />
+        <option value="$PROJECT_DIR$/recommendation/models.py" />
+        <option value="$PROJECT_DIR$/home_app/urls.py" />
         <option value="$PROJECT_DIR$/home_app/views.py" />
         <option value="$PROJECT_DIR$/templates/userorder.html" />
+        <option value="$PROJECT_DIR$/templates/cart_template.html" />
+        <option value="$PROJECT_DIR$/TastyNavigator/urls.py" />
+        <option value="$PROJECT_DIR$/recommendation/views.py" />
+        <option value="$PROJECT_DIR$/TastyNavigator/settings.py" />
+        <option value="$PROJECT_DIR$/home_app/models.py" />
       </list>
     </option>
   </component>
@@ -221,6 +188,11 @@
               <item name="TastyNavigator" type="b2602c69:ProjectViewProjectNode" />
               <item name="TastyNavigator" type="462c0819:PsiDirectoryNode" />
               <item name="TastyNavigator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TastyNavigator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TastyNavigator" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -272,7 +244,7 @@
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24084881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16657825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -300,7 +272,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.56765676" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29152915" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24084881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -323,8 +295,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Home/models.py" />
-    <entry file="file://$PROJECT_DIR$/Home/views.py" />
     <entry file="file://$PROJECT_DIR$/static/css/regstyles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -488,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TastyNavigator/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Registration.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -523,13 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cart_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="180" column="16" lean-forward="true" selection-start-line="180" selection-start-column="16" selection-end-line="180" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/categories.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -551,91 +507,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recommendation/models.py">
+    <entry file="file://$PROJECT_DIR$/recommendation/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="66" column="12" lean-forward="false" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="12" />
+        <state relative-caret-position="21">
+          <caret line="4" column="92" lean-forward="false" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_app/urls.py">
+    <entry file="file://$PROJECT_DIR$/TastyNavigator/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/recommendation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2982">
+        <state relative-caret-position="533">
           <caret line="142" column="43" lean-forward="false" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
           <folding>
-            <element signature="e#3712#3718#0" expanded="true" />
-            <element signature="e#5723#5729#0" expanded="true" />
-            <element signature="e#5744#5750#0" expanded="true" />
-            <element signature="e#5785#5791#0" expanded="true" />
-            <element signature="e#5827#5833#0" expanded="true" />
-            <element signature="e#5872#5878#0" expanded="true" />
-            <element signature="e#5914#5920#0" expanded="true" />
-            <element signature="e#6246#6252#0" expanded="true" />
+            <element signature="e#3712#3718#0" expanded="false" />
+            <element signature="e#5723#5729#0" expanded="false" />
+            <element signature="e#5744#5750#0" expanded="false" />
+            <element signature="e#5785#5791#0" expanded="false" />
+            <element signature="e#5827#5833#0" expanded="false" />
+            <element signature="e#5872#5878#0" expanded="false" />
+            <element signature="e#5914#5920#0" expanded="false" />
+            <element signature="e#6246#6252#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/empty_cart_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="123" column="18" lean-forward="true" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recommendation/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="62" column="36" lean-forward="true" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/userorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5040">
-          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#5134#5140#0" expanded="true" />
-            <element signature="e#5164#5170#0" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recommendation/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="4" column="92" lean-forward="false" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TastyNavigator/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recommendation/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="428">
+          <caret line="254" column="33" lean-forward="true" selection-start-line="254" selection-start-column="33" selection-end-line="254" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="421" column="31" lean-forward="false" selection-start-line="421" selection-start-column="31" selection-end-line="421" selection-end-column="31" />
+        <state relative-caret-position="-1021">
+          <caret line="369" column="11" lean-forward="false" selection-start-line="369" selection-start-column="11" selection-end-line="369" selection-end-column="11" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recommendation/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="438" column="52" lean-forward="true" selection-start-line="438" selection-start-column="52" selection-end-line="438" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="e#1#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cart_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="297" column="2" lean-forward="false" selection-start-line="297" selection-start-column="2" selection-end-line="297" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TastyNavigator/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TastyNavigator/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="66" column="99" lean-forward="false" selection-start-line="66" selection-start-column="99" selection-end-line="66" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

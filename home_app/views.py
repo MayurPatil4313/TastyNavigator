@@ -390,6 +390,9 @@ def handle_order(request):
             )
 
         # Clear the user's cart items after creating the orders
+
+
+
         cart_items.delete()
 
 
@@ -426,7 +429,10 @@ def userorder(request):
     return render(request,'userorder.html',context)
 
 
+# render ThankYou.html when the payment is successful
 
+def ThankYou(request):
+    return render(request,'ThankYou.html')
 
 
 

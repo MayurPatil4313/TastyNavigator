@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('handleOrder/', views.handle_order, name='handle_order'),
     path('userorder/', views.userorder, name='userorder'),
+    path('ThankYou/', views.ThankYou, name='ThankYou'),
 
 
 

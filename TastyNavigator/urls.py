@@ -26,8 +26,7 @@ admin.site.site_header = "Adminstration"
 admin.site.site_title = "Adminstration Panel"
 admin.site.index_title = "Welcome to TastyNavigation"
 from recommendation import views
-from recommendation.views import add_to_cart, view_cart ,remove_from_cart ,order , update_cart_quantity , update_cart_item_quantity
-
+from recommendation.views import add_to_cart, view_cart ,remove_from_cart ,order , update_cart_quantity , update_cart_item_quantity , process_order
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -51,9 +50,9 @@ path('Ingredients/',views.Ingredients),
     path('update_cart_item_quantity/<int:dish_id>/<int:new_quantity>/', update_cart_item_quantity,
          name='update_cart_item_quantity'),
 
+    path('process_order/<str:payment_id>/<str:signature>/', process_order, name='process_order'),
+
 
 ]
 
-# add manually
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

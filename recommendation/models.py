@@ -66,8 +66,11 @@ class CartItem(models.Model):
     category = models.CharField(max_length=255)
     quantity = models.PositiveIntegerField(default=1)  # Add this line for quantity
 
+
+
     def total_price(self):
         return self.quantity * self.price
+
 
     def __str__(self):
         return "{}'s {}".format(self.user.username, self.dish_name)

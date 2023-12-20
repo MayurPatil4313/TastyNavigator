@@ -46,9 +46,9 @@ import mysql.connector
 
 from django.contrib.auth import authenticate ,login, alogin , logout
 
+import razorpay
 
-
-
+from django.conf import settings
 
 # Create your views here.
 def recommendation(request):
@@ -409,18 +409,90 @@ def remove_from_cart(request, dish_id):
 
 
 
+from django.db.models import Sum, F, ExpressionWrapper, DecimalField
 
+from decimal import Decimal
 
-
+from django.db.models import Sum, ExpressionWrapper, F, DecimalField
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from home_app.models import CartItem, Order
+from django.conf import settings
+import razorpay
+from home_app.models import Order
 
 @login_required
 def view_cart(request):
     cart_items = CartItem.objects.filter(user=request.user)
-    return render(request, 'cart_template.html', {'cart_items': cart_items})
+
+    total_price = cart_items.aggregate(
+        total_price=Sum(ExpressionWrapper(F('quantity') * F('price'), output_field=DecimalField()))
+    )['total_price'] or Decimal('0')
+
+    # Check if total_price is less than 0.10
+    if total_price < Decimal('0.10'):
+        # Render a page indicating an empty cart
+        return render(request, 'empty_cart_template.html')
+
+    client = razorpay.Client(auth=(settings.RAZORPAY_API_KEY, settings.RAZORPAY_API_SECRET))
+
+    print("DEBUG: Total Price in USD:", total_price)
+    print("DEBUG: Total Price in Cents:", total_price)
+
+    # Convert Decimal to cents (integer) before passing to Razorpay
+    amount_in_cents = int(total_price * 1000)
+
+    payment = client.order.create({"amount": amount_in_cents , "currency": "INR", "payment_capture": 1})
+
+    context = {'cart_items': cart_items, 'payment': payment}
+    return render(request, 'cart_template.html', context)
 
 
 
 
+
+
+
+    # cart_items = CartItem.objects.filter(user=request.user)
+    #
+    # total_price = cart_items.aggregate(
+    #     total_price=Sum(ExpressionWrapper(F('quantity') * F('price'), output_field=DecimalField()))
+    # )['total_price'] or Decimal('0')
+    #
+    # # Check if total_price is less than 0.10
+    # if total_price < Decimal('0.10'):
+    #     # Render a page indicating an empty cart
+    #     return render(request, 'empty_cart_template.html')
+    #
+    # client = razorpay.Client(auth=(settings.RAZORPAY_API_KEY, settings.RAZORPAY_API_SECRET))
+    #
+    # print("DEBUG: Total Price in USD:", total_price)
+    # print("DEBUG: Total Price in Cents:", total_price)
+    #
+    # # Convert Decimal to cents (integer) before passing to Razorpay
+    # amount_in_cents = int(total_price * 100)
+    #
+    # payment = client.order.create({"amount": amount_in_cents * 80 , "currency": "INR", "payment_capture": 1})
+    #
+    # # Create an Order instance for each cart item and save it to the database
+    # for cart_item in cart_items:
+    #     Order.objects.create(
+    #
+    #         user=request.user,
+    #         dish_name=cart_item.dish_name,
+    #         description=cart_item.description,
+    #         price=cart_item.price,
+    #         quantity=cart_item.quantity,
+    #         amount=cart_item.total_price(),
+    #         razorpay_order_id = payment['id'],
+    #         razorpay_payment_id = payment['id'],
+    #         razorpay_signature = 'UPI'
+    #     )
+    #
+    # cart_items.delete()
+    #
+    # context = {'cart_items': cart_items, 'payment': payment}
+    # return render(request, 'cart_template.html', context)
 
 
 
@@ -525,7 +597,33 @@ def update_cart_item_quantity(request, dish_id, new_quantity):
 
 
 
+# 666666666666666666666666666666666666666666666666666666666666666666666666
+from django.shortcuts import render, redirect
+from home_app.models import CartItem, Order
 
+@login_required
+def process_order(request, payment_id, signature):
+    cart_items = CartItem.objects.filter(user=request.user)
+
+    # Create an Order instance for each cart item and save it to the database
+    for cart_item in cart_items:
+        Order.objects.create(
+            user=request.user,
+            dish_name=cart_item.dish_name,
+            description=cart_item.description,
+            price=cart_item.price,
+            quantity=cart_item.quantity,
+            amount=cart_item.total_price(),
+            razorpay_order_id = payment_id,
+            razorpay_payment_id=payment_id,
+            razorpay_signature=signature
+        )
+
+    # Clear the user's cart items after creating the orders
+    cart_items.delete()
+
+    # Redirect to a thank you page or another appropriate page
+    return render(request,'ThankYou.html')
 
 
 

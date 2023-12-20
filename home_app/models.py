@@ -1,7 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 from recommendation.models import CartItem
 
+from django.utils import timezone
+import pytz
 from django.utils import timezone
 
 class Registration_Data(models.Model):
@@ -42,10 +45,7 @@ from django.contrib.auth.models import User
 class Order(models.Model):
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  # Use the ID of a specific user
-    card_number = models.CharField(max_length=17)
-    expiration_date = models.CharField(max_length=50)
-    cvv_code = models.CharField(max_length=10)
-    card_holder_name = models.CharField(max_length=25)
+
 
     amount = models.CharField(max_length=25)
 
@@ -56,7 +56,25 @@ class Order(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     # Add DateTimeField for storing date and time
-    order_datetime = models.DateTimeField(default=timezone.now)
+    # order_datetime = models.DateTimeField(default=timezone.now)
+
+
+
+    razorpay_order_id = models.CharField(max_length=255 , null=True, blank=True)
+    razorpay_payment_id = models.CharField(max_length=255 ,null=True, blank=True)
+    razorpay_signature = models.CharField(max_length=255, null=True, blank=True)
+
+    order_datetime = models.DateTimeField(default=timezone.now, verbose_name='Order Date and Time')
+
+    def save(self, *args, **kwargs):
+        if not self.order_datetime:
+            self.order_datetime = timezone.now()
+        super().save(*args, **kwargs)
+
+
+
+
+
 
     def save(self, *args, **kwargs):
         # Calculate the amount based on dish price and quantity
@@ -64,7 +82,7 @@ class Order(models.Model):
         super(Order, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.card_holder_name
+        return self.user.first_name
 
 
 

@@ -32,7 +32,7 @@ DEBUG = True
 # mannula changes
 # ALLOWED_HOSTS = ['.vercel.app']
 
-ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
+ALLOWED_HOSTS = []
 
 
 
@@ -153,8 +153,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
 ]
 
-#ADD FOR DYPLOYMENT
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# #ADD FOR DYPLOYMENT
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -188,4 +188,27 @@ DEFAULT_FROM_EMAIL = 'mayurvijaypatil2002@gmail.com'  # Default sender email add
 # EMAIL_HOST_USER = 'avadhutlad5097@gmail.com'  # Your Gmail email address
 # EMAIL_HOST_PASSWORD = 'vgfa czan rspq yzkg'  # Your Gmail app password
 # DEFAULT_FROM_EMAIL = 'avadhutlad5097@gmail.com'  # Default sender email address
+
+
+
+
+
+# settings.py
+
+RAZORPAY_API_KEY = 'rzp_test_kFqYwcAZ3ckGa2'
+RAZORPAY_API_SECRET = 'RajyETFhyqWPPUOPsMCutioI'
+
+
+
+
+
+
+
+
+
+
+
+TIME_ZONE = 'Asia/Kolkata'
+
+
 

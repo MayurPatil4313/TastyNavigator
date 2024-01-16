@@ -36,6 +36,14 @@
 
 
 
+
+
+
+
+
+
+
+
   <!--custom table css-->
 
 
@@ -64,6 +72,9 @@
             margin: 20px;
 
         }
+
+
+
 
     </style>
   <!--end of custom css-->
@@ -98,6 +109,10 @@ $('.cart').click(function()
 
 
 
+<!-- Include the generated jsPDF file -->
+<script src="pdfExport.js"></script>
+ <!-- Include the generated jsPDF file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 
 
@@ -241,6 +256,8 @@ $('.cart').click(function()
 
     </table>
         <h2 style="text-align:center;">Total Amount: ${{ amount }}</h2>
+       <!-- Save as PDF button -->
+         <!--<button onclick="saveAsPDF()">Save as PDF</button>-->
        {% else %}
         <h1 style="text-align:center; margin-top:50px">No orders found for this user.</h1>
     {% endif %}
@@ -251,13 +268,13 @@ $('.cart').click(function()
 
   <!--for loop and table logic end-->
 
-  <!-- footer section -->
+<!-- footer section -->
   <footer class="footer_section">
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-        Distribution <a href="https://themewagon.com">ThemeWagon</a>
+        <a href="">DYPIMCA</a>
+        <!--Distribution <a href="https://themewagon.com">ThemeWagon</a>-->
       </p>
     </div>
   </footer>
@@ -280,6 +297,8 @@ $('.cart').click(function()
 
 
   <script>
+
+
     function addToCart(dishId) {
         // Make an AJAX request to add the dish to the cart
 
@@ -306,6 +325,13 @@ $('.cart').click(function()
 
 
     <!--END OF java script to retrive dish id -->
+
+
+
+
+
+
+
 
 
 
